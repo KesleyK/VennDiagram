@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: rgb(17, 27, 39);
+}
+
+.logo {
+  &__holder {
+    background-color: rgb(17, 27, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem; 
+  }
+
+  &__letter {
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &__letter--white {
+    color: #fff;
+  }
+
+  &__letter--green {
+    color: rgb(31, 190, 10);
+  }
+}
+
+#nav-div {
+  display: relative;
+  height: 4.5rem;
+}
+
+.navigation {
+  list-style: none;
+  background-color: rgba(173, 173, 173, 0.5);
+  z-index: 1000;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 4.5rem;
+  width: 100%;
+  transition: all 1s;
+
+  li {
+    margin-right: 2.5rem;
+    padding: 1.2rem 0;
+  }
+
+  a {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a:hover {
+    color: rgb(31, 190, 10);
+  }
+}
+
+.home {
+  min-height: 60vh;
+  background: radial-gradient(rgb(14, 41, 75), rgb(17, 27, 39));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5rem;
+
+  &__heading {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1.2px;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+  }
+
+  &__heading--main {
+    font-size: 4rem;
+    display: block;
+  }
+
+  &__heading--sub {
+    font-size: 2.3rem;
+    display: block;
+  }
+}
+
+.circulos {
+  &__logo {
+    height: 20rem;
+    width: 25rem;
+  }
+}
+
+section {
+  padding: 7.5rem 4rem;
+  background-color: #eee;
+}
+
+.primary-heading {
+  font-size: 4.5rem;
+  background: repeating-linear-gradient(rgb(41, 65, 94),rgb(9, 28, 51));
+  margin-top: 2rem;
+  
+  span {
+    font-weight: 300;
+    font-family: sans-serif;
+    margin-left: 3rem;
+    color: #f0f0f0;
+  }
+}
+
+.section-content {
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px;
+  padding: 1rem 3rem;
+  font-size: 2.2rem;
+}
+
+section#criar-diagrama .section-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.diagram-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30rem;
+  border: 2px solid grey;
+  background-color: rgb(218, 216, 216);
+  min-width: 40%;
+}
+
+.circle {
+  position: absolute;
+  border: 2px rgb(13, 13, 27) solid;
+  border-radius: 50%;
+  height: 60%;
+  width: 40%;
+  left: 30%;
+  top: 35%;
+
+  &--a {
+    transform: translate(-40%, -50%);
+    background-color: rgba(253, 237, 8, 0.4);
+  }
+
+  &--b {
+    transform: translate(40%, -50%);
+    background-color: rgba(57, 253, 8, 0.4);
+  }
+
+  &--c {
+    background-color: rgba(8, 53, 253, 0.4);
+
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VennDiagram | Criador de diagramas</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+
+  <header class="header" id="home">
+    <div class="logo__holder">
+      <span class="logo__letter logo__letter--white">Diagram</span>
+      <span class="logo__letter logo__letter--green">Venn</span>
+    </div>
+
+    <div id="nav-div">
+      <ul class="navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#teoria">Teoria</a></li>
+        <li><a href="#criar-diagrama">Criar Diagrama</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+      </ul>
+    </div>
+
+    <div class="home">
+      <h1 class="home__heading">
+        <span class="home__heading--main">Bem vindo ao criador de diagrama 100% gratuito</span>
+        <span class="home__heading--sub">
+          Aqui você pode criar seus diagramas do zero de forma gratuita e online
+        </span>
+      </h1>
+      <div class="circulos__holder">
+        <img class="circulos__logo" src="./public/img/circulos.png" alt="Diagramas">
+      </div>
+    </div>
+  </header>
+
+  <section id="teoria">
+    <h1 class="primary-heading"><span>Teoria</span></h1>
+    <div class="section-content">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, sunt impedit molestias porro doloremque dolore
+        quaerat atque repellendus. In sint blanditiis eum nisi dolorem consectetur aspernatur maiores veniam animi
+        ipsam.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita vero quo consequuntur beatae sit aperiam
+        quia. Libero consequuntur, esse at sapiente sit rem consectetur amet autem distinctio impedit veniam!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem dolores suscipit nihil maxime, pariatur
+        ducimus
+        soluta quia, laboriosam quaerat non cupiditate reiciendis, temporibus sint accusantium sunt nobis repellat
+        laborum
+        tempore?</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, molestias et aliquid repellendus illo
+        excepturi. At reiciendis ut asperiores cumque officiis eos itaque veniam similique id, pariatur ullam
+        voluptatibus
+        aperiam?</p>
+    </div>
+  </section>
+
+  <section id="criar-diagrama">
+    <h1 class="primary-heading"><span>Criar Diagrama</span></h1>
+    <div class="section-content">
+      <div class="diagram__input-area">
+        <label for="nameSet">Nome do conjunto</label><br>
+        <input type="text" name="nameSet" maxlength="12"><br>
+
+        <label for="interSet">Interseção com o(s) conjunto(s)</label><br>
+        <input type="text" name="interSet"><br>
+
+        <label for="sizeSet">Tamanho no gráfico</label><br>
+        <input type="number" name="sizeSet" min="1" max="3" value="3"><br>
+        <button id="btn" type="button">Create</button>
+      </div>
+      <div class="diagram-holder">
+        <div id="venn"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h1 class="primary-heading"><span>Sobre</span></h1>
+    <div class="section-content">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, sunt impedit molestias porro doloremque dolore
+        quaerat atque repellendus. In sint blanditiis eum nisi dolorem consectetur aspernatur maiores veniam animi
+        ipsam.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita vero quo consequuntur beatae sit aperiam
+        quia. Libero consequuntur, esse at sapiente sit rem consectetur amet autem distinctio impedit veniam!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem dolores suscipit nihil maxime, pariatur
+        ducimus
+        soluta quia, laboriosam quaerat non cupiditate reiciendis, temporibus sint accusantium sunt nobis repellat
+        laborum
+        tempore?</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, molestias et aliquid repellendus illo
+        excepturi. At reiciendis ut asperiores cumque officiis eos itaque veniam similique id, pariatur ullam
+        voluptatibus
+        aperiam?</p>
+    </div>
+  </section>
+
+  <section id="ajuda">
+    <h1 class="primary-heading"><span>Ajuda</span></h1>
+    <div class="section-content">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, sunt impedit molestias porro doloremque dolore
+        quaerat atque repellendus. In sint blanditiis eum nisi dolorem consectetur aspernatur maiores veniam animi
+        ipsam.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita vero quo consequuntur beatae sit aperiam
+        quia. Libero consequuntur, esse at sapiente sit rem consectetur amet autem distinctio impedit veniam!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem dolores suscipit nihil maxime, pariatur
+        ducimus
+        soluta quia, laboriosam quaerat non cupiditate reiciendis, temporibus sint accusantium sunt nobis repellat
+        laborum
+        tempore?</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, molestias et aliquid repellendus illo
+        excepturi. At reiciendis ut asperiores cumque officiis eos itaque veniam similique id, pariatur ullam
+        voluptatibus
+        aperiam?</p>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="./vennJs/venn.js"></script>
+  <script src="./vennJs/sets.js"></script>
+  <script src="./vennJs/tooltip-add.js"></script>
+  <script src="./public/js/navigation.js"></script>
+
+</body>
+
+</html>
