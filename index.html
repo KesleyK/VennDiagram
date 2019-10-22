@@ -5,9 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>VennDiagram | Criador de diagramas</title>
-  <link rel="stylesheet" href="style.css">
+  <title>DiagramaVenn | Criador de diagramas</title>
   
+  <style>
+    .diagram-holder {
+      position: relative;
+    }
+
+    #set-values {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  </style>
+
   <link rel="stylesheet" href="./public/css/style.css">
 </head>
 
@@ -15,7 +26,7 @@
 
   <header class="header" id="home">
     <div class="logo__holder">
-      <span class="logo__letter logo__letter--white">Diagram</span>
+      <span class="logo__letter logo__letter--white">Diagrama</span>
       <span class="logo__letter logo__letter--green">Venn</span>
     </div>
 
@@ -70,6 +81,9 @@
         <label for="nameSet">Nome do conjunto</label><br>
         <input type="text" name="nameSet" maxlength="12"><br>
 
+        <label for="valuesSet">Valor(es) do conjunto</label><br>
+        <input type="text" name="valuesSet"><br>
+
         <label for="interSet">Interseção com o(s) conjunto(s)</label><br>
         <input type="text" name="interSet"><br>
 
@@ -79,6 +93,7 @@
       </div>
       <div class="diagram-holder">
         <div id="venn"></div>
+        <p id="set-values"></p>
       </div>
     </div>
   </section>

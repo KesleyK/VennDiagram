@@ -12,6 +12,7 @@ function getMouseEventHover() {
     // Display a tooltip with the current size
     tooltip.transition().duration(400).style("opacity", .9);
     tooltip.text(d.values + " users");
+    $('#set-values').text(`${d.label}  = {${d.values}}`);
   
     // highlight the current path
     var selection = d3.select(this).transition("tooltip").duration(400);
@@ -29,6 +30,7 @@ function getMouseEventHover() {
   .on("mouseout", function (d, i) {
     tooltip.transition().duration(400).style("opacity", 0);
     var selection = d3.select(this).transition("tooltip").duration(400);
+    $('#set-values').text("");
     selection.select("path")
       .style("stroke-width", 0)
       .style("fill-opacity", d.sets.length == 1 ? .25 : .0)
