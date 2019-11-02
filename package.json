@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass public/sass/main.scss public/css/style.css -w"
+    "compile:sass": "node-sass public/sass/main.scss public/css/style.css -w",
+    "compile:sass-2": "node-sass exercises/public/sass/main.scss exercises/public/css/style.css -w"
   },
   "author": "Kesley Kenny",
   "license": "ISC",

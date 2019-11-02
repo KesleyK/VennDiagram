@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DiagramaVenn | Exercícios</title>
+  <link rel="stylesheet" href="public/css/style.css">
+
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+
+  <main class="main">
+    <div class="arrow__holder">
+      <a href="../index.html" class="arrow__link">&crarr;</a>
+    </div>
+
+    <div class="main__content">
+      <div class="sidebar">
+        <div class="sidebar__exercise active" onclick="changeActiveElement(this, 0)">B∩(A∪C)</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 1)">(C∩B)∪A</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 2)">B x C</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 3)">P(B∪A)</div>
+      </div>
+
+      <div class="diagram-holder">
+        <div id="venn"></div>
+        <p id="set-values"></p>
+
+        <div class="tutor">
+          <div class="tutor__console">
+            <div class="tutor__console--label">
+              Resolva: B∩(A∪C)
+            </div>
+            <div class="tutor__console--messages">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium doloribus ducimus dolorem dolores odio placeat perferendis quod sed, aliquid aliquam eius quasi molestiae rerum, repudiandae, corrupti repellendus. Dignissimos ipsum suscipit perspiciatis quod iusto id exercitationem esse. Saepe dolores quam possimus, explicabo omnis dolore architecto temporibus nulla reprehenderit totam modi! Ex alias consectetur facere corrupti provident officiis perspiciatis dolore soluta ea aperiam distinctio unde, numquam laboriosam repudiandae, labore mollitia, et omnis deleniti? Voluptas consequuntur, excepturi incidunt aut adipisci rem, laborum placeat mollitia explicabo beatae, architecto optio eius. A dolorem autem fuga, quaerat tempore, dolores maxime consectetur, voluptatem ab tempora voluptate corporis. Pariatur alias qui, cumque modi maxime veniam totam tempore harum optio quidem nihil nam sapiente quas quam repellat ratione corrupti, eveniet ipsum temporibus assumenda porro nemo iure? Natus quidem at laboriosam dolor molestias soluta, provident sequi sit laudantium cum.
+            </div>
+            <input 
+              type="text" 
+              placeholder="Escreva sua resposta" 
+              name="consoleInput" 
+              class="tutor__console--input">
+          </div>
+          
+          <div class="tutor__btn-holder">
+            <button class="button--send">Enviar</button>
+            <button class="button--hint">Ajuda</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="./vennJs/venn.js"></script>
+  <script src="./vennJs/sets.js"></script>
+  <script src="./vennJs/tooltip-add.js"></script>
+  <script>
+    const labels = [
+      'B∩(A∪C)',
+      '(C∩B)∪A',
+      'B x C',
+      'P(B∪A)'
+    ]
+    function changeActiveElement(element, selectedExercise) {
+      $('.tutor__console--label').text('Resolva: ' + labels[selectedExercise]);
+
+      $('.active').removeClass('active');
+      $(element).addClass('active');
+    }
+  </script>
+
+</body>
+
+</html>
