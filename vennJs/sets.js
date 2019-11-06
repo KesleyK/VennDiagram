@@ -11,7 +11,6 @@ $('#btn').on('click', btn => {
   valuesSet = $('input[name="valuesSet"]').val();
   interInput = $('input[name="interSet"]').val();
   sizeSetInput = $('input[name="sizeSet"]').val() * 300;
-  console.log(sets, newVal);
 
   const checkIfSetExist = sets.find(set => {
     return set.label == nameInput;
@@ -88,7 +87,23 @@ function addIntersection(intersectioInput) {
 }
 
 function addErrorMessage(message) {
-  $('#criar-diagrama .diagram__input-area').append(`<p>Erro: ${message}</p>`);
+  $('.error-message').text(`Erro: ${message}`);
+  animateErrorMessage();
+}
+
+function animateErrorMessage() {
+  const errorMessage = $('.error-message');
+  errorMessage.show();
+  errorMessage.animate({
+    'opacity': 0,
+    'top': '-=100px'
+  }, 2200, () => {
+    errorMessage.hide();
+    errorMessage.css({
+      'opacity': 1,
+      'top': '+=100px'
+    });
+  })
 }
 
 function bindIntersection(set1, set2) {

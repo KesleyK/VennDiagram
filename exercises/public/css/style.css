@@ -1,6 +1,7 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 html {
   font-size: 62.5%; }
@@ -19,8 +20,7 @@ html {
     margin-top: 3rem;
     margin-bottom: 3rem;
     width: 80vw;
-    text-align: center;
-    justify-content: center; }
+    text-align: center; }
 
 .arrow__holder {
   position: absolute;
@@ -37,7 +37,8 @@ html {
 
 .diagram-holder {
   height: fit-content;
-  flex-basis: 75%; }
+  flex-basis: 75%;
+  overflow-y: auto; }
 
 .sidebar {
   flex-basis: 25%;

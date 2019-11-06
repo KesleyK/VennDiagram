@@ -130,6 +130,7 @@ section {
 
 section#criar-diagrama .section-content {
   display: flex;
+  position: relative;
   justify-content: space-evenly;
 }
 
@@ -138,9 +139,14 @@ section#criar-diagrama .section-content {
   align-items: center;
   justify-content: center;
   min-height: 30rem;
+  position: relative;
   border: 2px solid grey;
   background-color: rgb(218, 216, 216);
-  min-width: 40%;
+  flex-basis: 50%;
+}
+
+.diagram__input-area > input{
+  width: 100%;
 }
 
 .circle {
@@ -166,4 +172,65 @@ section#criar-diagrama .section-content {
     background-color: rgba(8, 53, 253, 0.4);
 
   }
+}
+
+#set-values {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.btn-creatediagram {
+  margin-top: 1.2rem;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  background: radial-gradient(rgb(139, 218, 132), rgb(104, 209, 104));
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, .25) 0 .2rem 1rem;
+  transition: all .2s;
+}
+
+.btn-creatediagram:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: rgba(0, 0, 0, .25) 0 .5rem 1.2rem;
+}
+
+.btn-creatediagram:active {
+  transform: translateY(-1px);
+  box-shadow: rgba(0, 0, 0, .3) 0 .5rem 1rem;
+}
+
+.btn-creatediagram:focus {
+  outline: none;
+}
+
+.error-message {
+  position: fixed;
+  color: red;
+  font-size: 3rem;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: rgba(0, 0, 0, .3) 0 .5rem 1rem;
+}
+
+.btn-goToExercises {
+  position: absolute;
+  text-decoration: none;
+  bottom: 2rem;
+  left: 2rem;
+  color: rgb(24, 172, 44);
+  border-bottom: 2px solid currentColor;
+  padding: .1rem .2rem;
+  transition: all .2s;
+}
+
+.btn-goToExercises:hover {
+  background-color: rgb(24, 172, 44);;
+  box-shadow: rgba(0, 0, 0, .3) 0 .5rem 1rem;
+  border: transparent 2px solid;
+  color: #eee;
+  text-decoration: none;
 }
