@@ -22,7 +22,7 @@ html {
     display: flex;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    width: 80vw;
+    width: 82vw;
     text-align: center;
   }
 }
@@ -45,9 +45,11 @@ html {
 }
 
 .diagram-holder {
-  height: fit-content; 
   flex-basis: 75%;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
 }
 
 .sidebar {
@@ -59,6 +61,7 @@ html {
   justify-content: space-around;
 
   &__exercise {
+    text-transform: uppercase;
     background-color: #272626;
     display: flex;
     align-items: center;
@@ -98,9 +101,8 @@ html {
     flex-direction: column;
     display: flex;
     border: 1px solid #bebebe;
-    overflow: hidden;
   }
-
+  
   &__console--label {
     min-height: 3rem;
     display: flex;
@@ -110,7 +112,7 @@ html {
     font-size: 2rem;
     padding-left: 1rem;
   }
-
+  
   &__console--messages {
     background-color: rgb(209, 208, 208);
     width: 100%;
@@ -118,7 +120,7 @@ html {
     font-size: 1.6rem;
     text-align: start;
     padding: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   &__console--input {
@@ -167,4 +169,39 @@ html {
   &--hint {
     background: radial-gradient(yellow, rgb(211, 211, 11));
   }
+}
+
+#holder {
+  position: relative;
+}
+
+.exercise-statment {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 3rem;
+  top: 2rem;
+  left: 2rem;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.green-message {
+  color: rgb(15, 110, 15);
+  font-size: 2rem;
+}
+
+.red-message {
+  color: rgb(207, 24, 24);
+  font-size: 2rem;
+}
+
+.yellow-message {
+  color: rgb(11, 97, 177);
+  font-size: 2rem;
 }

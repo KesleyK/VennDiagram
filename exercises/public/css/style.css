@@ -19,7 +19,7 @@ html {
     display: flex;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    width: 80vw;
+    width: 82vw;
     text-align: center; }
 
 .arrow__holder {
@@ -36,9 +36,11 @@ html {
   font-size: 6rem; }
 
 .diagram-holder {
-  height: fit-content;
   flex-basis: 75%;
-  overflow-y: auto; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto; }
 
 .sidebar {
   flex-basis: 25%;
@@ -48,6 +50,7 @@ html {
   align-items: center;
   justify-content: space-around; }
   .sidebar__exercise {
+    text-transform: uppercase;
     background-color: #272626;
     display: flex;
     align-items: center;
@@ -78,8 +81,7 @@ html {
     height: 20rem;
     flex-direction: column;
     display: flex;
-    border: 1px solid #bebebe;
-    overflow: hidden; }
+    border: 1px solid #bebebe; }
   .tutor__console--label {
     min-height: 3rem;
     display: flex;
@@ -95,7 +97,7 @@ html {
     font-size: 1.6rem;
     text-align: start;
     padding: 1rem;
-    overflow-y: scroll; }
+    overflow-y: auto; }
   .tutor__console--input {
     font-size: 1.6rem;
     padding: .2rem .4rem;
@@ -129,3 +131,32 @@ html {
 
 .button--hint {
   background: radial-gradient(yellow, #d3d30b); }
+
+#holder {
+  position: relative; }
+
+.exercise-statment {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 3rem;
+  top: 2rem;
+  left: 2rem; }
+
+.invisible {
+  opacity: 0; }
+
+.green-message {
+  color: #0f6e0f;
+  font-size: 2rem; }
+
+.red-message {
+  color: #cf1818;
+  font-size: 2rem; }
+
+.yellow-message {
+  color: #0b61b1;
+  font-size: 2rem; }

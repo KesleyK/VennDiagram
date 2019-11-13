@@ -20,32 +20,41 @@
 
     <div class="main__content">
       <div class="sidebar">
-        <div class="sidebar__exercise active" onclick="changeActiveElement(this, 0)">B∩(A∪C)</div>
-        <div class="sidebar__exercise" onclick="changeActiveElement(this, 1)">(C∩B)∪A</div>
-        <div class="sidebar__exercise" onclick="changeActiveElement(this, 2)">B x C</div>
-        <div class="sidebar__exercise" onclick="changeActiveElement(this, 3)">P(B∪A)</div>
+        <div class="sidebar__exercise active" onclick="changeActiveElement(this, 0)">B∩¬(A∪C)</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 1)">B x C</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 2)">Valor de um conjunto</div>
+        <div class="sidebar__exercise" onclick="changeActiveElement(this, 3)">Problema prático</div>
       </div>
 
       <div class="diagram-holder">
-        <div id="venn"></div>
-        <p id="set-values"></p>
+        <div id="holder">
+          <p class="exercise-statment exercise-statment--2 invisible">
+            <span>A∪B = {1,2,3,4,5,6,7,8}</span>
+            <span>A∩B = {4,5}</span>
+            <span>A-B = {1,2,3}</span>
+          </p>
+          <p class="exercise-statment exercise-statment--3 invisible">
+            <span>
+              Um fazendeiro marcou todo o seu rebanho de gado, 80% recebeu etiquetas de carne de qualidade A
+              e 60% recebeu etiquetas de alimentação com ração.
+            </span>
+          </p>
+          <div id="venn"></div>
+          <p id="set-values"></p>
+        </div>
 
         <div class="tutor">
           <div class="tutor__console">
             <div class="tutor__console--label">
-              Resolva: B∩(A∪C)
+              Resolva: B∩¬(A∪C)
             </div>
             <div class="tutor__console--messages"></div>
-            <input 
-              type="text" 
-              placeholder="Escreva sua resposta" 
-              name="consoleInput" 
-              class="tutor__console--input">
+            <input type="text" placeholder="Escreva sua resposta" name="consoleInput" class="tutor__console--input">
           </div>
-          
+
           <div class="tutor__btn-holder">
-            <button class="button--send">Enviar</button>
-            <button class="button--hint">Ajuda</button>
+            <button class="button--send" id="btn-send">Enviar</button>
+            <button class="button--hint" id="btn-hint">Ajuda</button>
           </div>
         </div>
       </div>
@@ -57,22 +66,100 @@
   <script src="./vennJs/venn.js"></script>
   <script src="./vennJs/sets.js"></script>
   <script src="./vennJs/tooltip-add.js"></script>
+
   <script>
+
+    let currentExercise = 0;
+    let hintCont = 0;
+    const tutorMessage = $('.tutor__console--messages');
+    let consoleInput = $('input[name="consoleInput"]');
+    const btnSend = $('#btn-send');
+    const btnHint = $('#btn-hint');
+    const holderD = $('#holder');
+    const vennD = $('#venn');
+    const setValuesD = $('#set-values');
+    const exerciseStatment2 = $('.exercise-statment--2');
+    const exerciseStatment3 = $('.exercise-statment--3');
+
     const results = [
-      '4', ''
+      '1,9',
+      '(1,2),(1,3),(1,4),(4,2),(4,3),(4,4),(5,2),(5,3),(5,4),(9,2),(9,3),(9,4)',
+      '4,5,6,7,8',
+      '40'
     ]
     const labels = [
-      'B∩(A∪C)',
-      '(C∩B)∪A',
+      'B∩¬(A∪C)',
       'B x C',
-      'P(B∪A)'
+      'Qual o valor de B?',
+      'Qual percentual de gado recebeu duas etiquetas? '
     ]
+
+    exerciseStatment2.hide();
+    exerciseStatment3.hide();
+    exerciseStatment2.css('opacity', 1);
+    exerciseStatment3.css('opacity', 1);
+
+    btnSend.on('click', () => {
+      if (consoleInput.val() == results[currentExercise]) {
+        tutorMessage.append(`
+          <p class="green-message">Parabéns! Você acertou.</p>
+        `)
+      } else {
+        tutorMessage.append(`
+          <p class="red-message">Resposta errada! Talvez seja melhor pedir ajuda.</p>
+        `)
+      }
+    });
+
+    btnHint.on('click', () => {
+      if (currentExercise == 0) {
+        hintExercise0(hintCont);
+        hintCont++;
+      }
+    });
+
+    function clearConsole() {
+      tutorMessage.text("");
+    }
+
     function changeActiveElement(element, selectedExercise) {
+      initializeSet();
+      clearConsole();
+      hintCont = 0;
+      currentExercise = selectedExercise;
+
+      checkIfDiagramIsRequired(selectedExercise);
+      changeStatment(selectedExercise);
+
       $('.tutor__console--label').text('Resolva: ' + labels[selectedExercise]);
 
       $('.active').removeClass('active');
       $(element).addClass('active');
     }
+
+    function checkIfDiagramIsRequired(selectedExercise) {
+      if (selectedExercise > 1) {
+        vennD.fadeTo("fast", 0);
+        setValuesD.fadeTo("fast", 0);;
+      } else {
+        vennD.fadeTo("fast", 1);
+        setValuesD.fadeTo("fast", 1);
+      }
+    }
+
+    function changeStatment(selectedExercise) {
+      if (selectedExercise == 2) {
+        exerciseStatment2.fadeIn(200);
+        exerciseStatment3.hide();
+      } else if (selectedExercise == 3) {
+        exerciseStatment2.hide();
+        exerciseStatment3.fadeIn(200);
+      } else {
+        exerciseStatment2.hide();
+        exerciseStatment3.hide();
+      }
+    }
+
   </script>
 
 </body>
