@@ -65,7 +65,7 @@ function hintExercise0(contHint) {
   } else {
     sets[sets.length - 1].values = ['1,9'];
     tutorMessage.append(`
-      <p class="yellow-message">Um valor foi adicionado à B∩¬(A∪C).</p>
+      <p class="blue-message">Um valor foi adicionado à B∩¬(A∪C).</p>
     `)
   }
   d3.select("#venn").datum(sets).call(chart);
