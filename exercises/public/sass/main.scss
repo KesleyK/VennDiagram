@@ -176,6 +176,10 @@ html {
   }
 }
 
+button:focus {
+  outline: none;
+}
+
 #holder {
   position: relative;
 }
@@ -247,6 +251,10 @@ html {
   cursor: pointer;
 }
 
+.btn-closeModal:focus {
+  outline: none;
+}
+
 .modal {
   left: 50%;
   top: 50%;
@@ -269,7 +277,7 @@ html {
   align-self: flex-start;
 }
 
-.modal__group:nth-child(3) {
+.modal__group:nth-child(4) {
   margin-bottom: 3rem !important;
 }
 

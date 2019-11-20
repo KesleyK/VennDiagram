@@ -137,6 +137,9 @@ html {
 .button--hint {
   background: radial-gradient(yellow, #d3d30b); }
 
+button:focus {
+  outline: none; }
+
 #holder {
   position: relative; }
 
@@ -197,6 +200,9 @@ html {
 .btn-closeModal:hover {
   cursor: pointer; }
 
+.btn-closeModal:focus {
+  outline: none; }
+
 .modal {
   left: 50%;
   top: 50%;
@@ -217,7 +223,7 @@ html {
   display: block;
   align-self: flex-start; }
 
-.modal__group:nth-child(3) {
+.modal__group:nth-child(4) {
   margin-bottom: 3rem !important; }
 
 .modal__group {
