@@ -236,7 +236,8 @@ button:focus {
   outline: none;
 }
 
-.btn-closeModal {
+.btn-closeModal,
+.btn-closeModal2 {
   transform: rotate(-90deg);
   position: absolute;
   top: 1rem;
@@ -247,11 +248,13 @@ button:focus {
   color: #eee;
 }
 
-.btn-closeModal:hover {
+.btn-closeModal:hover,
+.btn-closeModal2:hover {
   cursor: pointer;
 }
 
-.btn-closeModal:focus {
+.btn-closeModal:focus,
+.btn-closeModal2:focus {
   outline: none;
 }
 
@@ -331,4 +334,8 @@ textarea {
 
 #btn-addExecises:hover {
   cursor: pointer;
+}
+
+#modal-exercise2 {
+  padding: 5rem;
 }

@@ -8,6 +8,9 @@ const holderD = $('#holder');
 const vennD = $('#venn');
 const setValuesD = $('#set-values');
 let exercisesStatment = $('p[class^="exercise-statment"');
+const modalExercise2 = $('#modal-exercise2');
+const modalExercise2Img = $('.modal-exercise2__img');
+const btnCloseModal2 = $('.btn-closeModal2');
 
 const results = [
   '1,9',
@@ -25,8 +28,18 @@ const labels = [
 const hints = [
   [],
   [],
-  [],
-  []
+  [
+    'sets-A.png',
+    'sets-B.png',
+    'sets-Intersect.png'
+  ],
+  [
+    '(80-x) +x + (60-x) = 100',
+    '140 -2x +x = 100',
+    '-x = 100 - 140',
+    '-x = -40',
+    'x = 40'
+  ]
 ]
 
 hideAllStatments();
@@ -47,6 +60,10 @@ btnHint.on('click', () => {
   if (currentExercise == 0) {
     hintExercise0(hintCont);
     hintCont++;
+  } else if (currentExercise == 2) {
+    modalExercise2.show();
+    addImgToModal2();
+    hintCont++;
   } else {
     let currentHint = hints[currentExercise][hintCont];
     if (!currentHint) {
@@ -58,7 +75,12 @@ btnHint.on('click', () => {
   }
 });
 
+btnCloseModal2.on('click', () => {
+  modalExercise2.addClass('invisible');
+});
+
 function hideAllStatments() {
+  modalExercise2.hide();
   exercisesStatment = $('p[class^="exercise-statment"');
   exercisesStatment.hide();
   exercisesStatment.css('opacity', 1);
@@ -82,6 +104,7 @@ function changeActiveElement(element, selectedExercise) {
 
   $('.active').removeClass('active');
   $(element).addClass('active');
+  modalExercise2.addClass('invisible');
 }
 
 function checkIfDiagramIsRequired(selectedExercise) {
@@ -98,7 +121,17 @@ function changeStatment(selectedExercise) {
   if (selectedExercise >= 2) {
     $(`.exercise-statment--${selectedExercise}`)
       .fadeIn(200);
+      modalExercise2.hide();
   } else {
     exercisesStatment.hide();
+  }
+}
+
+function addImgToModal2() {
+  if (hints[currentExercise][hintCont]) {
+    modalExercise2.removeClass('invisible');
+    modalExercise2Img.attr('src', './public/img/' + hints[currentExercise][hintCont]);
+  } else {
+    tutorMessage.append('<p class="red-message">Nenhuma ajuda disponível.</p>');
   }
 }

@@ -45,6 +45,11 @@
         <button id="btn-addExecises">Adicionar Exercício</button>
       </div>
 
+      <div id="modal-exercise2" class="modal invisible">
+        <button class="btn-closeModal2">X</button>
+        <img src="" class="modal-exercise2__img" alt="Exercise Hint">
+      </div>
+
       <div class="sidebar">
         <div class="sidebar__exercise active" onclick="changeActiveElement(this, 0)">B∩¬(A∪C)</div>
         <div class="sidebar__exercise" onclick="changeActiveElement(this, 1)">B x C</div>
@@ -141,11 +146,11 @@
         newExerciseHint2,
         newExerciseHint3
       ]);
-      
+
       $('.sidebar').append(labelOnSidebar);
       $('#holder').append(entireStatment);
       $('#modal').fadeOut(100);
-      
+
       newExercisePosition++;
     });
 
